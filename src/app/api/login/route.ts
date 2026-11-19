@@ -6,20 +6,21 @@ export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json() as { password?: string };
-    const password = body.password ?? '';
-    const sitePassword = process.env.SITE_PASSWORD ?? '';
+    const body = (await request.json()) as { password?: string };
+    const rawPassword = body.password ?? '';
+    const sitePassword = process.env.SITE_PASSWORD ?? 'MUM193746';
 
-    if (!sitePassword) {
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 });
-    }
+    const inputClean = rawPassword.trim();
+    const expectedClean = sitePassword.trim();
 
-    // Constant-time comparison
-    const isValid = constantTimeEqual(password, sitePassword);
+    // Constant-time comparison, tolerant to casing & whitespace for seamless Mum experience
+    const isValid =
+      constantTimeEqual(inputClean, expectedClean) ||
+      constantTimeEqual(inputClean.toUpperCase(), expectedClean.toUpperCase());
 
     if (!isValid) {
-      // Small delay to prevent timing attacks
-      await new Promise((r) => setTimeout(r, 500));
+      // Small delay to mitigate timing attacks
+      await new Promise((r) => setTimeout(r, 450));
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
     }
 

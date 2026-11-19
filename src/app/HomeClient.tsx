@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Heart, ChevronDown, Camera, Sparkles } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import InfiniteSlideshow from '@/components/InfiniteSlideshow';
+import BirthdayModalWidget from '@/components/BirthdayModalWidget';
 import { siteConfig } from '@/config/site';
 import type { Album, Photo } from '@/types/gallery';
 
@@ -209,6 +210,7 @@ export default function HomeClient({
   return (
     <main className="min-h-screen">
       <Navigation />
+      <BirthdayModalWidget />
 
       {/* Hero */}
       <HeroSection />

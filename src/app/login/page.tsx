@@ -2,8 +2,9 @@
 
 import { useState, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Eye, EyeOff, Heart, Sparkles, Lock } from 'lucide-react';
+import { Eye, EyeOff, Heart, Sparkles, Lock, Crown } from 'lucide-react';
 
 export default function LoginPage() {
   const [password, setPassword] = useState('');
@@ -28,10 +29,14 @@ export default function LoginPage() {
       });
 
       if (res.ok) {
-        router.push('/');
+        // Mark that user just logged in so the birthday celebration widget pops up!
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('just_logged_in', 'true');
+        }
+        router.push('/?welcome=true');
       } else {
         setShake(true);
-        setError("That's not quite right, love ♥");
+        setError("That&apos;s not quite right, love ♥ (Password: MUM193746)");
         setPassword('');
         setTimeout(() => setShake(false), 600);
         inputRef.current?.focus();
@@ -45,97 +50,99 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen aurora-bg flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Floating orbs */}
-      {[
-        { size: 320, top: '5%', left: '-5%', color: 'rgba(236,72,153,0.15)', delay: 0 },
-        { size: 240, top: '60%', right: '-8%', color: 'rgba(201,154,107,0.12)', delay: 1.5 },
-        { size: 180, bottom: '10%', left: '15%', color: 'rgba(212,168,83,0.10)', delay: 0.8 },
-        { size: 200, top: '20%', right: '10%', color: 'rgba(249,168,212,0.12)', delay: 2 },
-      ].map((orb, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full blur-3xl pointer-events-none animate-float"
-          style={{
-            width: orb.size,
-            height: orb.size,
-            top: orb.top,
-            left: (orb as { left?: string }).left,
-            right: (orb as { right?: string }).right,
-            bottom: (orb as { bottom?: string }).bottom,
-            background: orb.color,
-            animationDelay: `${orb.delay}s`,
-          }}
-        />
-      ))}
+      {/* Ambient background glows */}
+      <div className="absolute top-10 left-5 w-72 h-72 rounded-full bg-blush-500/15 blur-3xl pointer-events-none animate-float" />
+      <div className="absolute bottom-10 right-5 w-80 h-80 rounded-full bg-champagne-400/12 blur-3xl pointer-events-none animate-float-slow" />
+      <div className="absolute top-1/2 right-1/4 w-60 h-60 rounded-full bg-rosegold-400/10 blur-3xl pointer-events-none animate-float-fast" />
 
-      {/* Sparkle particles */}
-      {[...Array(8)].map((_, i) => (
+      {/* Floating sparkles */}
+      {[...Array(9)].map((_, i) => (
         <motion.div
           key={`sparkle-${i}`}
           className="absolute text-blush-300 pointer-events-none select-none"
           style={{
-            left: `${10 + i * 11}%`,
-            top: `${15 + (i % 4) * 20}%`,
+            left: `${8 + i * 10}%`,
+            top: `${12 + (i % 5) * 18}%`,
             fontSize: `${10 + (i % 3) * 6}px`,
           }}
           animate={{
-            y: [0, -10, 0],
+            y: [0, -12, 0],
             opacity: [0.3, 1, 0.3],
-            scale: [1, 1.2, 1],
+            scale: [1, 1.25, 1],
           }}
           transition={{
-            duration: 2 + i * 0.3,
+            duration: 2.2 + i * 0.3,
             repeat: Infinity,
-            delay: i * 0.4,
+            delay: i * 0.35,
           }}
         >
           ✦
         </motion.div>
       ))}
 
-      {/* Glass card */}
+      {/* Login Card */}
       <motion.div
-        initial={{ opacity: 0, y: 24, scale: 0.96 }}
+        initial={{ opacity: 0, y: 24, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-md"
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="relative w-full max-w-md z-10"
       >
         <motion.div
           animate={shake ? { x: [-8, 8, -6, 6, -4, 4, 0] } : { x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="glass rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/50 relative overflow-hidden">
-            {/* Subtle inner glow */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blush-500/5 to-champagne-400/5 pointer-events-none" />
+          <div className="glass rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/60 relative overflow-hidden border border-white/10">
+            {/* Soft inner gradient accent */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blush-500/8 via-transparent to-champagne-400/6 pointer-events-none" />
 
-            {/* Icon */}
-            <div className="flex justify-center mb-6">
+            {/* Mum's Avatar & Birthday Crown */}
+            <div className="flex flex-col items-center mb-6">
               <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
                 className="relative"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blush-500/30 to-champagne-400/20 flex items-center justify-center backdrop-blur-sm border border-blush-400/20">
-                  <Heart className="w-7 h-7 text-blush-400" fill="currentColor" />
+                {/* Crown badge */}
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 bg-gradient-to-r from-champagne-400 via-rosegold-400 to-blush-400 px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-black shadow-glow-gold">
+                  <Crown className="w-3 h-3" />
+                  <span>Birthday Queen</span>
                 </div>
-                <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-champagne-400 animate-twinkle" />
+
+                {/* Avatar with glowing ring */}
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-blush-400 via-rosegold-400 to-champagne-400 shadow-glow-rose">
+                  <div className="w-full h-full rounded-full overflow-hidden relative">
+                    <Image
+                      src="/gallery/mum-1.webp"
+                      alt="Mum"
+                      fill
+                      priority
+                      className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Little heart badge */}
+                <div className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-blush-500 flex items-center justify-center text-white border-2 border-midnight shadow-md">
+                  <Heart className="w-4 h-4 fill-current text-white" />
+                </div>
               </motion.div>
             </div>
 
-            {/* Heading */}
-            <div className="text-center mb-8">
-              <h1 className="font-serif text-3xl sm:text-4xl font-bold gradient-text mb-3">
+            {/* Heading & Subtitle */}
+            <div className="text-center mb-7">
+              <h1 className="font-serif text-3xl sm:text-4xl font-bold gradient-text mb-2">
                 Welcome, Mum 💕
               </h1>
-              <p className="text-white/60 text-sm leading-relaxed">
-                A little something made with love,<br />just for you.
+              <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">
+                A private gallery of love & memories, made just for you by Sweetu & Cutu.
               </p>
             </div>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Login Form */}
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40">
                   <Lock className="w-4 h-4" />
                 </div>
                 <input
@@ -143,31 +150,31 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your secret password"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-11 pr-12 text-white placeholder:text-white/30 focus:outline-none focus:border-blush-400/50 focus:bg-white/8 transition-all duration-200"
+                  placeholder="Enter secret password (MUM193746)"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-11 pr-12 text-white placeholder:text-white/30 focus:outline-none focus:border-blush-400/60 focus:bg-white/10 transition-all duration-200 text-sm sm:text-base"
                   autoComplete="current-password"
                   autoFocus
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((v) => !v)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/80 transition-colors"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
 
-              {/* Error message */}
+              {/* Error notification */}
               <AnimatePresence mode="wait">
                 {error && (
                   <motion.p
-                    initial={{ opacity: 0, y: -6 }}
+                    initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    className="text-blush-300 text-sm text-center"
+                    exit={{ opacity: 0, y: -4 }}
+                    className="text-blush-300 text-xs sm:text-sm text-center font-medium"
                   >
-                    {error}
+                    That&apos;s not quite right, love ♥ (Try: MUM193746)
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -175,27 +182,38 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading || !password.trim()}
-                className="btn-primary w-full py-4 text-base relative disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="btn-primary w-full py-3.5 text-base relative disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
               >
                 {loading ? (
-                  <span className="flex items-center justify-center gap-2">
+                  <>
                     <motion.span
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                       className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                     />
-                    Opening the door...
-                  </span>
+                    <span>Unlocking memories...</span>
+                  </>
                 ) : (
-                  'Enter with Love ✨'
+                  <>
+                    <span>Enter with Love ✨</span>
+                    <Sparkles className="w-4 h-4" />
+                  </>
                 )}
               </button>
             </form>
 
-            {/* Footer hint */}
-            <p className="text-center text-white/20 text-xs mt-6">
-              Made with 💕 by Sweetu & Cutu
-            </p>
+            {/* Friendly hint */}
+            <div className="mt-6 pt-5 border-t border-white/5 text-center">
+              <p className="text-white/40 text-xs flex items-center justify-center gap-1.5">
+                <span>Password hint:</span>
+                <span className="font-mono text-champagne-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+                  MUM193746
+                </span>
+              </p>
+              <p className="text-white/30 text-xs mt-2">
+                Today is your birthday, Mum! 🎂 19 November
+              </p>
+            </div>
           </div>
         </motion.div>
       </motion.div>

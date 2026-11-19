@@ -7,7 +7,6 @@ export async function middleware(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value;
   const isAuthenticated = token ? await verifyToken(token) : false;
 
-  // Allow public paths without auth check
   const isLoginPage = pathname === '/login';
   const isApiLogin = pathname === '/api/login';
   const isApiLogout = pathname === '/api/logout';
@@ -30,5 +29,7 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|gallery/).*)'],
+  matcher: [
+    '/((?!login|api/login|api/logout|_next/static|_next/image|favicon.ico|gallery).*)',
+  ],
 };

@@ -9,11 +9,13 @@ export const metadata = {
 export default function BirthdayPage() {
   const data = galleryData as GalleryData;
 
-  // Collect photos that include Mum (combination albums first, then all)
-  const mumAlbums = data.albums.filter((a) =>
-    a.people.includes('mum')
-  );
+  // Individual Mum photos
+  const mumAlbum = data.albums.find((a) => a.slug === 'mum');
+  const mumPhotos = mumAlbum ? mumAlbum.photos : [];
+
+  // All photos that include Mum (individual + combinations)
+  const mumAlbums = data.albums.filter((a) => a.people.includes('mum'));
   const collagePhotos = mumAlbums.flatMap((a) => a.photos);
 
-  return <BirthdayClient collagePhotos={collagePhotos} />;
+  return <BirthdayClient mumPhotos={mumPhotos} collagePhotos={collagePhotos} />;
 }
