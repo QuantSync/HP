@@ -36,7 +36,7 @@ export default function LoginPage() {
         router.push('/?welcome=true');
       } else {
         setShake(true);
-        setError("That&apos;s not quite right, love ♥ (Password: MUM191828)");
+        setError("That&apos;s not quite right, love ♥ (Password: MUM193746)");
         setPassword('');
         setTimeout(() => setShake(false), 600);
         inputRef.current?.focus();
@@ -150,7 +150,7 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter secret password (MUM191828)"
+                  placeholder="Enter secret password (MUM193746)"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-11 pr-12 text-white placeholder:text-white/30 focus:outline-none focus:border-blush-400/60 focus:bg-white/10 transition-all duration-200 text-sm sm:text-base"
                   autoComplete="current-password"
                   autoFocus
@@ -174,7 +174,7 @@ export default function LoginPage() {
                     exit={{ opacity: 0, y: -4 }}
                     className="text-blush-300 text-xs sm:text-sm text-center font-medium"
                   >
-                    That&apos;s not quite right, love ♥ (Try: MUM191828)
+                    That&apos;s not quite right, love ♥ (Try: MUM193746)
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -208,11 +208,11 @@ export default function LoginPage() {
                 <span>Password hint:</span>
                 <button
                   type="button"
-                  onClick={() => setPassword('MUM191828')}
+                  onClick={() => setPassword('MUM193746')}
                   className="font-mono text-champagne-400 bg-white/5 hover:bg-white/15 hover:border-champagne-400/50 px-2 py-0.5 rounded border border-white/10 transition-all cursor-pointer"
                   title="Click to auto-fill"
                 >
-                  MUM191828
+                  MUM193746
                 </button>
               </p>
               <p className="text-white/30 text-xs mt-2">

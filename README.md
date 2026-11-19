@@ -6,7 +6,7 @@ A premium, private photo gallery web app gifted to Mum on her birthday. Built wi
 
 ## ✨ Features
 
-- 🔐 **Password-protected** login portal (password: `MUM191828`)
+- 🔐 **Password-protected** login portal (password: `MUM193746`)
 - 🎂 **Birthday page** with confetti, interactive cake, animated headline, typewriter message
 - 📸 **Masonry gallery** with filter chips and blur-up loading
 - 🗂️ **Individual albums** per person + combination albums
@@ -122,7 +122,7 @@ If you place an MP3 at `public/music/birthday.mp3`, the birthday page will show 
 
 3. **Set Environment Variables** in Vercel Project Settings → Environment Variables:
    ```
-   SITE_PASSWORD = MUM191828
+   SITE_PASSWORD = MUM193746
    AUTH_SECRET   = <your 64-char hex secret>
    ```
    > ⚠️ Never commit `.env.local` — it's in `.gitignore`.

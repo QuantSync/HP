@@ -10,11 +10,11 @@ export async function POST(request: NextRequest) {
     const rawPassword = body.password ?? '';
     const inputClean = rawPassword.trim();
 
-    // Accept MUM191828 as the primary password, plus env variable and legacy fallback
+    // Accept MUM193746 as primary password, plus env variable and legacy fallback
     const validPasswords = [
-      'MUM191828',
-      (process.env.SITE_PASSWORD || '').trim(),
       'MUM193746',
+      (process.env.SITE_PASSWORD || '').trim(),
+      'MUM191828',
     ].filter(Boolean);
 
     // Constant-time comparison, tolerant to casing & whitespace
