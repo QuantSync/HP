@@ -1,0 +1,241 @@
+{
+  "albums": [
+    {
+      "slug": "mum",
+      "title": "Mum",
+      "people": [
+        "mum"
+      ],
+      "cover": "/gallery/mum-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/mum-1.webp",
+          "width": 900,
+          "height": 1600,
+          "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABwAgCdASoKAAoAAsBMJYgCdAYubn6sc2mca5AAAP23Im1BwgRv2/sbSq++iz6JK9JQLTllne/PNuPYbeW9ZZiPc6D66ziay7oqT/TPmytM2enHffkKSl+DBhsZmJ9AAAA="
+        },
+        {
+          "src": "/gallery/mum-2.webp",
+          "width": 720,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoKAAoAAsBMJYgCdAYvNn1Uwoej2gAA/bcibUHkISnp+xtKvSJjvsj7Hy9jweA7RMwucjm+LveG/iXIv6hd9+Du7elj93+mfOOWJJy9ELDE+d844YMNjMxPoAAAAA=="
+        }
+      ]
+    },
+    {
+      "slug": "sweetu",
+      "title": "Sweetu",
+      "people": [
+        "sweetu"
+      ],
+      "cover": "/gallery/sweetu-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/sweetu-1.webp",
+          "width": 540,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoKAAoAAsBMJbACdAEYEVTRr3KgAP7mIluFS/brgdziZrhE5miEBvEL2h/953NUk5E+4gtsVFyx5J6KiqICV8bvS7krf1vQ0B8AAA=="
+        },
+        {
+          "src": "/gallery/sweetu-2.webp",
+          "width": 719,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoKAAoAAsBMJYgCdAD0jkjAGNAAAP7pkqWfCd8Jn+6AWlieLWFbTXIP2r+L+0fXRy6E6mR8w5ngCHdMLRR8fwAA"
+        },
+        {
+          "src": "/gallery/sweetu-3.webp",
+          "width": 719,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoKAAoAAsBMJZQCdADdDZ2AAAD+8XOpzZXTtyXuGJXOI0EEEfBn2v9VmIEJPfHvFjSdpvZyegS1JgAA"
+        },
+        {
+          "src": "/gallery/sweetu-4.webp",
+          "width": 960,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoKAAoAAsBMJQBdgBwx8K4BAAD+x2v43bIbMiOruHCyv54DFDgFRkLwU8UlLcYI5SUWv520Cq7vTOYfN4ng25rg2X19IjxygAA="
+        },
+        {
+          "src": "/gallery/sweetu-5.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoKAAoAAsBMJbACdAEXZuGj2AAA/vNZAlqSqv159XcvvmnL28aokoapQlmDk6t9QPwp3kmfPYZxmO8q7JYJeRxD3FOmK2PXVkAAAA=="
+        },
+        {
+          "src": "/gallery/sweetu-6.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoKAAoAAsBMJZQCdADdDXqEgAD+6KqONz0uy2b658FMnfejAy7ntwnW+XZIHqPp/rVmSNBMIS9GQU8ll/G089A6Y7DevBCRfAHAAA=="
+        },
+        {
+          "src": "/gallery/sweetu-7.webp",
+          "width": 719,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoKAAoAAsBMJZACdAEHF3GAAAD+7JyxjNVCjmCZu6lfPSdK5F2Dl0uqE/FFshrJFb1czIqDtVIVTk/dVT6NDDJuLCDz/I31AAA="
+        },
+        {
+          "src": "/gallery/sweetu-8.webp",
+          "width": 720,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoKAAoAAsBMJQBOkCYi+Hqzr7gAAP7oAFUyBT/UTUrRf3U8u41nhmuTqwpXSbFsVez1sikJ6a/c5WslEaA5Rbp21FStROAA"
+        },
+        {
+          "src": "/gallery/sweetu-9.webp",
+          "width": 540,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoKAAoAAsBMJQBOgCLHgU3+FAAA/r/JprjEGN6/cDODdJPj5pmsBjEnWRt3SVOygqwDmGZk29xjd5G2yCXvFZO8AFsqAAAA"
+        },
+        {
+          "src": "/gallery/sweetu-10.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoKAAoAAsBMJQBOgBuEqmsv5AD9Av/aOLGxhCD07TmP2PcriXmBHgLG5eO1ITE/nYRuvaclYWvbCLo2bzwj4zgX/BGKo/R2fjefa9OAAAA="
+        },
+        {
+          "src": "/gallery/sweetu-11.webp",
+          "width": 960,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoKAAoAAsBMJYwCdAEXZ3dwiNVQAP7CrD1pqb68gNqNt4okvMAhTsg1XPpu+FhbezInSrPZ8jS5veon6JJwSw6wcVdGLCF0AB9kpSKI5a9kd/BiqAA="
+        },
+        {
+          "src": "/gallery/sweetu-12.webp",
+          "width": 960,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoKAAoAAsBMJZwAAvwY0vvTx8AA/tJrwmWhGdZ7zIJvLsObntoDCgk30Zhv0eyXx7TLRpBpLxv4QjiD/srS7oSiK48ABZrsgAA="
+        },
+        {
+          "src": "/gallery/sweetu-13.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoKAAoAAsBMJYwCdADc+yYYbsAA/ooRsZ+EwkesaYdBxj2CH63puXUuWa6AQHgQ7T98cOQA2RyJGnHW9XhTJ19aPPZNk7M/goI5R9P6DP1noAAA"
+        }
+      ]
+    },
+    {
+      "slug": "cutu",
+      "title": "Cutu",
+      "people": [
+        "cutu"
+      ],
+      "cover": "/gallery/cutu-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/cutu-1.webp",
+          "width": 1200,
+          "height": 1600,
+          "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoKAAoAAsBMJZQC7ADceeOemAAA/q3ZntG31lXmuo5u4flIDC++QvzRylYwwRLxkNk7ay2yAf7F98I0Ljt2zfmg13laZocj+0+4qlRmUAA="
+        },
+        {
+          "src": "/gallery/cutu-2.webp",
+          "width": 1600,
+          "height": 1200,
+          "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoKAAoAAsBMJZACdADZl7ZfAAD+B3k0ttbnd8QFgX75hOBL5h6Bs8PEfIwMAJdg2+Ni/tq68twEpA18bU/ECp3pxiCaB8iiclI7aIAA"
+        },
+        {
+          "src": "/gallery/cutu-3.webp",
+          "width": 1600,
+          "height": 1200,
+          "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoKAAoAAsBMJYwCdAEfvVdvTktxAAD+85ruPmJRvc6b5GAZuG95oEm3La5yY9VNMV7+6lCs4vNC1R1EZw2zrPQmLbbRM2nXwAA="
+        },
+        {
+          "src": "/gallery/cutu-4.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAQCdASoKAAoAAsBMJQBOgB54XDQkAP7CnuBKGLzM1LbJNZWZzL3YodZg8eBcNqF/LpaLDxZtnoJ17NsGZMRujrtYSCy+1GsCkxqD9HbQZvMtVnQ7AAAA"
+        },
+        {
+          "src": "/gallery/cutu-5.webp",
+          "width": 1600,
+          "height": 1200,
+          "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoKAAoAAsBMJQBYdh9btJQJQAAA/kfRZKUGRLseIYYaZ291wi9e7b25ne4r5HYWZoeiJKPhH1cmUAYtxQGSG69TqCzpaC4/88h9M9a+fbsznKAA"
+        }
+      ]
+    },
+    {
+      "slug": "sweetu-and-mum",
+      "title": "Sweetu & Mum",
+      "people": [
+        "sweetu",
+        "mum"
+      ],
+      "cover": "/gallery/sweetu-and-mum-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/sweetu-and-mum-1.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoKAAoAAsBMJZQCdAYuvbHxWIxwAOIgN6pmj+5c9i/j33M3rZQ0aEgOAjDFYsOki1KwHb+PQOpCIin7k4PtKN66uuUrmN6FU8btoNmJ/b8iDbiL+AAAAA=="
+        },
+        {
+          "src": "/gallery/sweetu-and-mum-2.webp",
+          "width": 960,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoKAAoAAsBMJZQCdAEe2CBjvHUgAPvrG68+dH3W7xlQYcxm1gTC5UID/ObxWf1tA1fHKY/p8LTucPpImqtUxyngehDBjNbCe7MzBwdVrkL174GrBmBWdYAA"
+        },
+        {
+          "src": "/gallery/sweetu-and-mum-3.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoKAAoAAsBMJQBOgCMDOSGggPAAzfksgidaNvMWB6sGFVT7XYV2magdL3gDWBS6SLUOYL35tCrNxgHRrxcswplA2LrzEkS1LBT7wAAA"
+        }
+      ]
+    },
+    {
+      "slug": "sweetu-and-cutu",
+      "title": "Sweetu & Cutu",
+      "people": [
+        "sweetu",
+        "cutu"
+      ],
+      "cover": "/gallery/sweetu-and-cutu-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/sweetu-and-cutu-1.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoKAAoAAsBMJYwCdADdHr0IVB3AAP5otG1OVZWdLX3VcLtzFZW340xpZwzbDn9ydtS0c6dDG80OoH8SqTxYCcTILtcmfDrK8135cOB9oB3b062GcYyZaIAA"
+        },
+        {
+          "src": "/gallery/sweetu-and-cutu-2.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAQCdASoKAAoAAsBMJQBOgB54XDQkAP7CnuBKGLzM1LbJNZWZzL3YodZg8eBcNqF/LpaLDxZtnoJ17NsGZMRujrtYSCy+1GsCkxqD9HbQZvMtVnQ7AAAA"
+        },
+        {
+          "src": "/gallery/sweetu-and-cutu-3.webp",
+          "width": 719,
+          "height": 1280,
+          "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoKAAoAAsBMJQBOgCIfpIB8PAD+ddQFgcOiizO/mEF6oYXewJetnRvLTZ1zgnOF2+3VA/lkNcKup0jjHU8Pi8NLI0wf2RrO4M9wAA=="
+        },
+        {
+          "src": "/gallery/sweetu-and-cutu-4.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoKAAoAAsBMJbAC7AEUL/O1b+MqqQAA/mwkfJeroks2A402yG9BIJammWe42um3ZkbEiI9TMM6Kb7vaznRVHYEIqQ9+hlyINJvM1JwXJLaobc/2nFAAAA=="
+        },
+        {
+          "src": "/gallery/sweetu-and-cutu-5.webp",
+          "width": 1280,
+          "height": 960,
+          "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoKAAoAAsBMJQBOgB+E3R10AAD+SZlPDJBV6T7FGDDniXQ+ZioUu46EkiioZqBVaMU/OohIUlkBA+fAPWoqw+O7qHZlJKZyEFf8uwWuZe68AAAA"
+        }
+      ]
+    },
+    {
+      "slug": "cutu-and-mum",
+      "title": "Cutu & Mum",
+      "people": [
+        "cutu",
+        "mum"
+      ],
+      "cover": "/gallery/cutu-and-mum-1.webp",
+      "photos": [
+        {
+          "src": "/gallery/cutu-and-mum-1.webp",
+          "width": 1600,
+          "height": 1200,
+          "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQAgCdASoKAAoAAsBMJbACdAYrd2guy9tNiwAA8mVZlvXr7z7e+N8fsVvbpSo801IcZf1tj37iWaIKzih3JvuxtPQumkCp5o5y5t6D8wZ4kHPMF0mlWAbhZX3yOpUKGfrowAAA"
+        }
+      ]
+    }
+  ]
+}
