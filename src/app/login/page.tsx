@@ -206,9 +206,14 @@ export default function LoginPage() {
             <div className="mt-6 pt-5 border-t border-white/5 text-center">
               <p className="text-white/40 text-xs flex items-center justify-center gap-1.5">
                 <span>Password hint:</span>
-                <span className="font-mono text-champagne-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setPassword('MUM191828')}
+                  className="font-mono text-champagne-400 bg-white/5 hover:bg-white/15 hover:border-champagne-400/50 px-2 py-0.5 rounded border border-white/10 transition-all cursor-pointer"
+                  title="Click to auto-fill"
+                >
                   MUM191828
-                </span>
+                </button>
               </p>
               <p className="text-white/30 text-xs mt-2">
                 Today is your birthday, Mum! 🎂 19 November

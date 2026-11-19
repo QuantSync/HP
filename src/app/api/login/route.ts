@@ -8,19 +8,24 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as { password?: string };
     const rawPassword = body.password ?? '';
-    const sitePassword = process.env.SITE_PASSWORD ?? 'MUM191828';
-
     const inputClean = rawPassword.trim();
-    const expectedClean = sitePassword.trim();
 
-    // Constant-time comparison, tolerant to casing & whitespace for seamless Mum experience
-    const isValid =
-      constantTimeEqual(inputClean, expectedClean) ||
-      constantTimeEqual(inputClean.toUpperCase(), expectedClean.toUpperCase());
+    // Accept MUM191828 as the primary password, plus env variable and legacy fallback
+    const validPasswords = [
+      'MUM191828',
+      (process.env.SITE_PASSWORD || '').trim(),
+      'MUM193746',
+    ].filter(Boolean);
+
+    // Constant-time comparison, tolerant to casing & whitespace
+    const isValid = validPasswords.some(
+      (expected) =>
+        constantTimeEqual(inputClean, expected) ||
+        constantTimeEqual(inputClean.toUpperCase(), expected.toUpperCase())
+    );
 
     if (!isValid) {
-      // Small delay to mitigate timing attacks
-      await new Promise((r) => setTimeout(r, 450));
+      await new Promise((r) => setTimeout(r, 400));
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
     }
 
@@ -37,7 +42,8 @@ export async function POST(request: NextRequest) {
     });
 
     return response;
-  } catch {
+  } catch (err) {
+    console.error('Login error:', err);
     return NextResponse.json({ error: 'Bad request' }, { status: 400 });
   }
 }
