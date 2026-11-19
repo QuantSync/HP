@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as { password?: string };
     const rawPassword = body.password ?? '';
-    const sitePassword = process.env.SITE_PASSWORD ?? 'MUM193746';
+    const sitePassword = process.env.SITE_PASSWORD ?? 'MUM191828';
 
     const inputClean = rawPassword.trim();
     const expectedClean = sitePassword.trim();

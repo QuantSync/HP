@@ -36,7 +36,7 @@ export default function LoginPage() {
         router.push('/?welcome=true');
       } else {
         setShake(true);
-        setError("That&apos;s not quite right, love ♥ (Password: MUM193746)");
+        setError("That&apos;s not quite right, love ♥ (Password: MUM191828)");
         setPassword('');
         setTimeout(() => setShake(false), 600);
         inputRef.current?.focus();
@@ -150,7 +150,7 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter secret password (MUM193746)"
+                  placeholder="Enter secret password (MUM191828)"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-11 pr-12 text-white placeholder:text-white/30 focus:outline-none focus:border-blush-400/60 focus:bg-white/10 transition-all duration-200 text-sm sm:text-base"
                   autoComplete="current-password"
                   autoFocus
@@ -174,7 +174,7 @@ export default function LoginPage() {
                     exit={{ opacity: 0, y: -4 }}
                     className="text-blush-300 text-xs sm:text-sm text-center font-medium"
                   >
-                    That&apos;s not quite right, love ♥ (Try: MUM193746)
+                    That&apos;s not quite right, love ♥ (Try: MUM191828)
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -207,7 +207,7 @@ export default function LoginPage() {
               <p className="text-white/40 text-xs flex items-center justify-center gap-1.5">
                 <span>Password hint:</span>
                 <span className="font-mono text-champagne-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
-                  MUM193746
+                  MUM191828
                 </span>
               </p>
               <p className="text-white/30 text-xs mt-2">

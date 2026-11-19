@@ -29,7 +29,7 @@ async function main() {
     const resCorrect = await fetch('http://localhost:3000/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: 'MUM193746' }),
+      body: JSON.stringify({ password: 'MUM191828' }),
     });
     const cookie = resCorrect.headers.get('set-cookie');
     console.log('3. Correct password -> Status:', resCorrect.status, 'Cookie received:', !!cookie);
